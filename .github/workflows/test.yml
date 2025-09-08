@@ -1,0 +1,58 @@
+name: QA Automation Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  playwright-tests:
+    name: Playwright Web Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd playwright-web
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: |
+          cd playwright-web
+          npx playwright test
+
+  appium-tests:
+    name: Appium Mobile Tests
+    runs-on: ubuntu-latest
+    needs: playwright-tests
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Maven
+        run: sudo apt-get install -y maven
+
+      # 참고: GitHub Actions에서 실제 Android Emulator 실행은 무겁기 때문에,
+      # 일반적으로는 별도 테스트 환경(예: BrowserStack, Saucelabs)에 연결해야 합니다.
+      # 여기서는 샘플 구성을 보여주기 위해 간단히 유지합니다.
+      - name: Run Appium tests
+        run: |
+          cd appium-mobile
+          mvn test
