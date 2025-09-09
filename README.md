@@ -1,1 +1,101 @@
-"# qa-automation-playwright" 
+🌐 웹 자동화 테스트 (Playwright)
+🌟 프로젝트 소개
+
+이 프로젝트는 Playwright와 JavaScript를 활용하여 구글 검색 기능을 자동화 테스트한 예제입니다.
+
+브라우저에서 반복적으로 수행되는 검색 시나리오를 자동화하여, QA 과정에서의 효율성과 정확성을 높이는 데 중점을 두었습니다.
+
+🚀 주요 기능
+
+검색 자동화: 구글에서 특정 키워드("Playwright")를 검색하고 첫 번째 결과 타이틀을 확인합니다.
+
+크로스 브라우저 지원: Chromium, Firefox, WebKit 등 다양한 브라우저 환경에서 동일한 테스트 실행 가능.
+
+테스트 리포트: Playwright 기본 HTML 리포트 및 Allure 리포트를 통해 결과를 시각적으로 확인.
+
+CI/CD 통합: GitHub Actions와 연동하여 코드 푸시 시 자동으로 테스트가 실행되도록 구성.
+
+💡 기술적 성과 및 문제 해결
+
+Playwright 및 테스트 자동화 프레임워크를 단기간 내 습득하여 웹 UI 자동화 시나리오를 구현.
+
+테스트 실행 환경에서 발생한 버전 차이 및 CI/CD 파이프라인 에러를 해결하며, 문제 해결 능력을 증명.
+
+GitHub Actions를 통해 자동 테스트 파이프라인을 구축하고, 테스트 결과를 리포트 아티팩트로 보관.
+
+Allure Report와 Trace Viewer를 활용해 테스트 실패 원인 분석 및 디버깅 가시성을 강화.
+
+🤖 AI 도구 활용
+
+본 프로젝트는 ChatGPT, Google Gemini, Claude 등의 AI 도구를 적극적으로 활용했습니다.
+
+학습 지원: Playwright 및 CI/CD 설정 관련 학습 곡선을 단축.
+
+코드 품질 개선: Locator 전략 최적화 및 리팩토링에 AI 피드백 반영.
+
+문제 해결: GitHub Actions에서 발생한 환경 설정 오류 해결에 AI의 조언 적용.
+
+문서화 보조: README 및 프로젝트 구조 설명을 AI를 통해 정리.
+
+🛠️ 개발 환경 및 실행 방법
+실행 환경
+
+Node.js: 18+
+
+Playwright: 1.48.0
+
+Allure Report: 2.24.0
+
+GitHub Actions: CI/CD 자동화
+
+실행 방법
+
+프로젝트 클론
+
+git clone https://github.com/euuuuuuan/qa-automation-playwright.git
+cd qa-automation-playwright
+
+
+의존성 설치
+
+npm install
+npx playwright install --with-deps
+
+
+테스트 실행
+
+npx playwright test
+
+
+리포트 확인
+
+# HTML Reporter
+npx playwright show-report
+
+# Allure Reporter
+npx allure generate ./allure-results --clean -o ./allure-report
+npx allure open ./allure-report
+
+📈 테스트 과정 및 결과
+
+테스트 절차: 구글 접속 → 키워드 입력("Playwright") → 검색 결과 확인.
+
+테스트 통과 화면: 검색 결과 첫 번째 타이틀에 "Playwright" 포함 여부 확인.
+
+📸 시연 예시
+
+
+
+
+📂 프로젝트 구조 예시
+qa-automation-playwright/
+ ┣ 📂 tests                     # Playwright 테스트 코드
+ ┣ 📂 docs/images               # 스크린샷 및 리포트 캡처
+ ┣ playwright.config.ts         # Playwright 환경 설정
+ ┣ package.json                 # 프로젝트 의존성 관리
+ ┣ .github/workflows            # GitHub Actions CI/CD 설정
+ ┗ README.md
+
+🧑‍💻 개발자 정보
+이름	역할	연락처
+전유안	QA 자동화 엔지니어	GitHub: euuuuuuan
