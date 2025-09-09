@@ -94,6 +94,7 @@ npx allure open ./allure-report
 
 
 ---
+```
 📂 프로젝트 구조 예시
 qa-automation-playwright/
  ┣ 📂 tests                     # Playwright 자동화 테스트 코드
@@ -102,7 +103,10 @@ qa-automation-playwright/
  ┣ package.json                 # 프로젝트 의존성 관리
  ┣ .github/workflows            # GitHub Actions CI/CD 설정
  ┗ README.md
+```
  ---
-🧑‍💻 개발자 정보
-이름	역할	연락처
-전유안	QA 자동화 엔지니어	GitHub: euuuuuuan
+### 🧑‍💻 개발자 정보
+
+| 이름   | 역할               | 연락처                                                                 |
+| :----- | :----------------- | :--------------------------------------------------------------------- |
+| 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
