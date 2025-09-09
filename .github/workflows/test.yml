@@ -22,13 +22,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd playwright-web
           npm install
           npx playwright install --with-deps
 
       - name: Run Playwright tests
         run: |
-          cd playwright-web
           npx playwright test
 
   appium-tests:
