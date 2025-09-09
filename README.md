@@ -53,14 +53,14 @@
 #### **실행 방법**
 
 1️⃣ **프로젝트 클론**
-```
-git clone https://github.com/euuuuuuan/qa-automation-playwright.git
-cd qa-automation-playwright
-```
+[git clone](https://github.com/euuuuuuan/qa-automation-playwright.git)
+
+
 
 2️⃣ 의존성 설치
 
 ```
+cd qa-automation-playwright
 npm install
 npx playwright install --with-deps
 ```
