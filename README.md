@@ -43,8 +43,8 @@
 
 #### **실행 환경**
 
-- ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)  
-- ![Playwright](https://img.shields.io/badge/Playwright-1.48.0-2EAD33?style=flat-square&logo=playwright&logoColor=white)  
+- ![Node.js](https://img.shields.io/badge/Node.js-22.19.0-339933?style=flat-square&logo=nodedotjs&logoColor=white)  
+- ![Playwright](https://img.shields.io/badge/Playwright-1.55.0-2EAD33?style=flat-square&logo=playwright&logoColor=white)  
 - ![Allure Report](https://img.shields.io/badge/Allure-2.24.0-FF5A5F?style=flat-square&logo=allure&logoColor=white)  
 - ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI/CD-2088FF?style=flat-square&logo=githubactions&logoColor=white)  
 
