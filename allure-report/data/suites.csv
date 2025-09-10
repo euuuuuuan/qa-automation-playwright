@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","30059","구글 검색 테스트","webkit","Thu Sep 11 00:00:28 KST 2025","broken","Thu Sep 11 00:00:58 KST 2025","","google-search.spec.js","",""
+"","30075","구글 검색 테스트","firefox","Thu Sep 11 00:00:28 KST 2025","broken","Thu Sep 11 00:00:58 KST 2025","","google-search.spec.js","",""
+"","30043","구글 검색 테스트","chromium","Thu Sep 11 00:00:28 KST 2025","broken","Thu Sep 11 00:00:58 KST 2025","","google-search.spec.js","",""

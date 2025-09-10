@@ -1,11 +1,9 @@
-
-# Playwright
-node_modules/
+# Playwright 테스트 결과 및 캐시
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 
-# Git에 올리지 않을 파일 목록
-/node_modules
+# Node.js 모듈 및 인증 파일
+node_modules/
 auth.json
