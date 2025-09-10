@@ -68,6 +68,7 @@ npx playwright install --with-deps
 3️⃣ 테스트 실행
 ```
 npx playwright test
+npx playwright test --headed (GUI 모드)
 ```
 
 4️⃣ 리포트 확인
