@@ -105,15 +105,30 @@ npx allure open ./allure-report
 <img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/docs/screenshots/allure-report-ex.png" width="700px">
 ---
 
+
+## 📂 프로젝트 구조 예시
 ```
-📂 프로젝트 구조 예시
-qa-automation-playwright/
- ┣ 📂 tests                     # Playwright 자동화 테스트 코드
- ┣ 📂 docs/images               # 스크린샷 및 리포트 캡처
- ┣ playwright.config.ts         # Playwright 환경 설정
- ┣ package.json                 # 프로젝트 의존성 관리
- ┣ .github/workflows            # GitHub Actions CI/CD 설정
- ┗ README.md
+/QA-AUTOMATION-PLAYWRIGHT
+├── 📂.github/                  # GitHub Actions 워크플로우 파일
+├── 📂allure-report/            # Allure 리포트 HTML 파일
+├── 📂allure-results/           # Allure 리포트 생성용 데이터
+├── 📂docs/                     # 문서 파일
+│   └── screenshots/          # 스크린샷 이미지
+├── node_modules/             # Node.js 패키지
+├── playwright-report/        # Playwright 기본 HTML 리포트
+├── test-results/             # 실패한 테스트의 결과 (트레이스, 스크린샷)
+├── 📂tests/                    # 실제 테스트 파일 (.spec.js)
+│   ├── google-search.spec.js
+│   └── login.spec.js
+├── 📂tests-examples/           # Playwright 공식 예제 테스트 파일
+│   └── demo-todo-app.spec.js
+├── .gitignore                # Git 추적에서 제외할 파일 목록
+├── auth.json                 # 로그인 세션 정보 (Git 제외)
+├── package.json              # 프로젝트 의존성 및 스크립트
+├── package-lock.json         # 정확한 패키지 버전 관리
+├── playwright.config.js      # Playwright 설정 파일
+└── README.md                 # 프로젝트 설명 파일
+
 ```
  ---
 ### 🧑‍💻 개발자 정보
