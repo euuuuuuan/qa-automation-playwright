@@ -71,14 +71,22 @@ npx playwright test
 ```
 
 4️⃣ 리포트 확인
+테스트 실행 후 다음 명령어를 통해 테스트 결과를 확인할 수 있습니다.
 
-
+# HTML 리포트
 ```
-# HTML Reporter
+```
 npx playwright show-report
-
+```
 # Allure Reporter
+```
+- 리포트 생성: 테스트 결과 파일(allure-results)을 기반으로 HTML 리포트를 만듭니다.
+```
 npx allure generate ./allure-results --clean -o ./allure-report
+```
+
+- 리포트 열기: 생성된 리포트를 웹 브라우저로 엽니다.
+```
 npx allure open ./allure-report
 ```
 
