@@ -74,8 +74,7 @@ npx playwright test
 테스트 실행 후 다음 명령어를 통해 테스트 결과를 확인할 수 있습니다.
 
 # HTML 리포트
-```
-```
+
 npx playwright show-report
 ```
 # Allure Reporter
