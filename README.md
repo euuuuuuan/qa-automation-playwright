@@ -101,8 +101,8 @@ npx allure open ./allure-report
 📸 시연 예시
 
 
-<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/google-search-playwright-result.png width=700px">
-<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/docs/screenshots/allure-report-ex.png width=700px">
+<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/google-search-playwright-result.png" width="700px">
+<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/docs/screenshots/allure-report-ex.png" width="700px">
 ---
 ```
 📂 프로젝트 구조 예시
