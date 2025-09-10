@@ -99,7 +99,9 @@ npx allure open ./allure-report
 
 ---
 📸 시연 예시
-<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/google-search-playwright-result.png" width="400px">
+
+
+<img src="https://github.com/euuuuuuan/qa-automation-playwright/blob/main/google-search-playwright-result.png" width="700px">
 
 ---
 ```
