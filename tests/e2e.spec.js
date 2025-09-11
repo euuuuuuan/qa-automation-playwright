@@ -1,4 +1,5 @@
 // tests/e2e.spec.js
+// 회원가입 및 로그인 기능 E2E 테스트 자동화
 // 연계 프로젝트 주소 (https://github.com/euuuuuuan/clothing-mall-project)
 const { test, expect } = require('@playwright/test');
 const { faker } = require('@faker-js/faker');

@@ -1,27 +1,60 @@
-name: Playwright Tests
+name: Django Playwright Tests
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      
+      - name: Node.js 의존성 설치
+        run: npm ci
+
+      - name: Playwright 브라우저 설치
+        run: npx playwright install --with-deps
+
+      - name: Python 환경 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Python 의존성 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # 가상 환경을 사용한다면, 아래 주석을 해제하고 경로를 맞춰주세요.
+          # source .venv/bin/activate
+      
+      - name: Django 마이그레이션 실행
+        run: python manage.py migrate
+
+      - name: 테스트용 슈퍼유저 생성
+        run: |
+          python manage.py createsuperuser --no-input --username test --email test@example.com || true
+
+      - name: Django 개발 서버 백그라운드에서 실행
+        run: python manage.py runserver 0.0.0.0:8000 &
+        env:
+          DJANGO_SETTINGS_MODULE: your_project_name.settings  # <-- 이 부분을 당신의 프로젝트 설정 파일 경로로 변경하세요.
+      
+      - name: 서버가 준비될 때까지 대기
+        run: sleep 5 # 서버가 완전히 실행될 때까지 잠시 기다립니다. 더 안정적인 방법도 있습니다.
+
+      - name: Playwright 테스트 실행
+        run: npx playwright test
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
