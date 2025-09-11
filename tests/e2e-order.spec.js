@@ -77,3 +77,5 @@ test('상품 주문 및 장바구니 관리 전체 E2E 테스트', async ({ page
     console.log('모든 테스트 시나리오가 완료되었습니다. 5초 후 종료합니다.');
     await page.waitForTimeout(5000);
 });
+
+// 자동화 테스트를 위한 수정
