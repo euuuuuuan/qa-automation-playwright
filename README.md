@@ -54,7 +54,7 @@ QA 과정에서의 **효율성과 정확성**을 높이는 데 중점을 두었�
 - ![Playwright](https://img.shields.io/badge/Playwright-1.55.0-2EAD33?style=flat-square&logo=playwright&logoColor=white)  
 - ![Allure Report](https://img.shields.io/badge/Allure-2.34.1-FF5A5F?style=flat-square&logo=allure&logoColor=white)  
 - ![Python](https://img.shields.io/badge/Python-3.13.2-3776AB?style=flat-square&logo=python&logoColor=white)  
-- ![Django](https://img.shields.io/badge/Django-5.1-092E20?style=flat-square&logo=django&logoColor=white)  
+- ![Django](https://img.shields.io/badge/Django-5.2.6-092E20?style=flat-square&logo=django&logoColor=white)  
 
 
 ### ▶ 실행 방법
