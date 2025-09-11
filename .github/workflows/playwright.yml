@@ -30,7 +30,7 @@ jobs:
       - name: Python 의존성 설치
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r qa-automation-playwright/requirements.txt
 
       - name: Django 마이그레이션 실행
         run: python manage.py migrate
