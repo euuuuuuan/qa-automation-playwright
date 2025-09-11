@@ -8,5 +8,5 @@ test('로그인 실패 케이스 (잘못된 비밀번호)', async ({ page }) => 
     await page.fill('#id_password', 'wrong_password');
     await page.click('text=로그인');
 
-    await page.pause(); // <-- 여기에 추가
+    await page.pause(); 
 });

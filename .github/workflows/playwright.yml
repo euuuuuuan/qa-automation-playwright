@@ -31,9 +31,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # 가상 환경을 사용한다면, 아래 주석을 해제하고 경로를 맞춰주세요.
-          # source .venv/bin/activate
-      
+
       - name: Django 마이그레이션 실행
         run: python manage.py migrate
 
@@ -44,13 +42,13 @@ jobs:
       - name: Django 개발 서버 백그라운드에서 실행
         run: python manage.py runserver 0.0.0.0:8000 &
         env:
-          DJANGO_SETTINGS_MODULE: your_project_name.settings  # <-- 이 부분을 당신의 프로젝트 설정 파일 경로로 변경하세요.
-      
+          DJANGO_SETTINGS_MODULE: your_project_name.settings
+
       - name: 서버가 준비될 때까지 대기
-        run: sleep 5 # 서버가 완전히 실행될 때까지 잠시 기다립니다. 더 안정적인 방법도 있습니다.
+        run: sleep 5
 
       - name: Playwright 테스트 실행
-        run: npx playwright test
+        run: npx playwright test tests/e2e-order.spec.js tests/e2e.spec.js tests/register.spec.js
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
