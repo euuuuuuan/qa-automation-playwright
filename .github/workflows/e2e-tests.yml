@@ -1,0 +1,42 @@
+name: E2E Tests
+
+on: [push]
+
+jobs:
+  playwright-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Start Django server (background)
+        # 이 경로는 Django 프로젝트의 manage.py 파일이 있는 위치에 따라 수정해야 합니다.
+        # 예: run: python your-project-name/manage.py runserver &
+        run: python manage.py runserver &
+        shell: bash
+        
+      - name: Wait for server to be ready
+        # 서버가 완전히 실행될 때까지 기다립니다.
+        run: npx wait-on http://127.0.0.1:8000
+      
+      - name: Run Playwright tests
+        run: npx playwright test tests/e2e.spec.js
+
+      - name: Upload Playwright test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
